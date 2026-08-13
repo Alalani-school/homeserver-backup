@@ -1,0 +1,15 @@
+[Unit]
+  Description=INSERT DESCRIPTION
+  After=network-online.target
+  Wants=network-online.target
+
+[Service]
+    Type=simple
+    User= (insert user, not needed)
+    WorkingDirectory= (path to directory of program)
+    ExecStart= (command)
+    Restart-on-failure
+    RestartSec=5
+    
+[Install]
+    WantedBy=multi-user.target
