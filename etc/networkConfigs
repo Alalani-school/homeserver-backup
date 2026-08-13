@@ -1,0 +1,16 @@
+//wired (named 20-wired.network)
+[Match]
+Name=eno1
+
+[Network]
+Address= //INSERT ADDRESS
+Gateway= //ROUTER ADDRESS
+DNS=1.1.1.1
+DNS=8.8.8.8
+
+//wireless (named 25-wireless.network)
+[Match]
+Name=wlan0
+
+[Network]
+DHCP=yes
