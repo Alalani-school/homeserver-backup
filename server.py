@@ -5,7 +5,9 @@ import subprocess
 
 CHANNELS = {
     "@ishowspeed": "https://twitch.tv/ishowspeed",
-    "@kaicenat": "https://twitch.tv/kaicenat"
+    "@kaicenat": "https://twitch.tv/kaicenat",
+    "@camman18": "https://twitch.tv/camman18",
+    "@LTT": "https://youtube.com/@LinusTechTips"
 }
 
 class Handler(BaseHTTPRequestHandler):
@@ -16,6 +18,10 @@ class Handler(BaseHTTPRequestHandler):
 http://localhost:8765/stream/@ishowspeed
 #EXTINF:-1 tvg-id="@kaicenat" tvg-name="KaiCenat",@kaicenat
 http://localhost:8765/stream/@kaicenat
+#EXTINF:-1 tvg-id="@camman18" tvg-name="Camman18",@camman18
+http://localhost:8765/stream/@camman18
+#EXTINF:-1 tvg-id=LinusTechTips" tvg-name="LinusTechTips",LinusTechTips
+http://localhost:8765/stream/@LTT
 """
             data = playlist.encode()
             self.send_response(200)
