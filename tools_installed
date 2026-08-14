@@ -1,2 +1,3 @@
 Packages:
-base base-devel linux linux-firmware caddy tailscale streamlink jellyfin-server jellyfin-web samba openssh git nvim jre-openjdk-headless iwd cronie
+base base-devel linux linux-firmware caddy tailscale streamlink jellyfin-server jellyfin-web \
+samba openssh git nvim jre-openjdk-headless iwd cronie dnsmasq
