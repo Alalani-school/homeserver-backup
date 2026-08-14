@@ -10,6 +10,20 @@ CHANNELS = {
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
+        if self.path == "/playlist.m3u":
+            playlist = """#EXTM3U
+            #EXTINF:-1 tvg-id="@ishowspeed" tvg-name="IshowSpeed",@ishowspeed
+            http://localhost:8765/stream/@ishowspeed
+            #EXTINF:-1 tvg-id="@kaicenat" tvg-name="KaiCenat",@kaicenat
+            http://localhost:8765/stream/@kaicenat
+            """
+            data = playlist.encode()
+            self.sendResponse(200)
+            self.send_header("Content-Type", "application/x-mpegURL")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+            return
         channel = self.path.removeprefix("/stream/").split("?")[0]
 
         if channel not in CHANNELS:
