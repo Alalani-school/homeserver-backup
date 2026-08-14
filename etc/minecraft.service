@@ -1,0 +1,15 @@
+[Unit]
+  Description=INSERT DESCRIPTION
+  After=network-online.target
+  Wants=network-online.target
+
+[Service]
+    Type=simple
+    User=minecraft
+    WorkingDirectory=/srv/minecraft
+    ExecStart=java -Xms2G -Xmx4G -jar server.jar nogui
+    Restart-on-failure
+    RestartSec=5
+
+[Install]
+    WantedBy=multi-user.target
