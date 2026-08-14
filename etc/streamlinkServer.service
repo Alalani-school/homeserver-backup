@@ -1,0 +1,15 @@
+[Unit]
+Description=Streamlink http server for jellyfin
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/streamlink-server/
+ExecStart=/usr/bin/python3 /opt/streamlink-server/server.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
